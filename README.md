@@ -24,11 +24,18 @@ git clone https://github.com/your-repo/b2b.git
 cd b2b
 npm install
 
+
+
+ Compile contract
+npx hardhat compile
+
  Start local blockchain
 npx hardhat node
 
- Deploy token contract
-npx hardhat run scripts/deploy.js --network localhost
+ Open new terminal and deploy contract using Ignition
+npx hardhat ignition deploy ignition/modules/MyTokenModule.cjs --network localhost
 
+ Copy MyTokenModule#MyToken and paste to .env
+    
  Start the API server
 npm run start

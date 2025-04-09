@@ -14,5 +14,10 @@
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "viem": "^2.26.2"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ignition": "^0.15.10",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.19"
   }
 }
