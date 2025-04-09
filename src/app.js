@@ -14,8 +14,8 @@ app.get('/symbol', async (req, res) => {
         res.json({
             data
         });
-    } catch (err) {
-        res.status(500).json({error: err.message});
+    } catch (error) {
+        res.status(500).json({error: error.message});
     }
 });
 
@@ -28,8 +28,8 @@ app.get('/name', async (req, res) => {
         res.json({
             data,
         });
-    } catch (err) {
-        res.status(500).json({error: err.message});
+    } catch (error) {
+        res.status(500).json({error: error.message});
     }
 });
 
@@ -41,8 +41,8 @@ app.get('/totalSupply', async (req, res) => {
         res.json({
             data,
         });
-    } catch (err) {
-        res.status(500).json({error: err.message});
+    } catch (error) {
+        res.status(500).json({error: error.message});
     }
 });
 
@@ -57,8 +57,8 @@ app.get('/balance/:address', async (req, res) => {
                 address, balance: data.toString()
             }
         });
-    } catch (err) {
-        res.status(500).json({error: err.message});
+    } catch (error) {
+        res.status(500).json({error: error.message});
     }
 });
 
@@ -91,8 +91,13 @@ app.post('/transferFrom', async (req, res) => {
         res.json({
             txHash,
         });
-    } catch (err) {
-        console.log(err);
-        res.status(500).json({error: err.message});
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({error: error.message});
     }
+});
+
+
+app.use((req, res) => {
+    res.status(404).send("Error");
 });
